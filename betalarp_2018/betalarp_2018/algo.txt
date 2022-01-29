@@ -1,0 +1,53 @@
+betaLarp_emetteur.ino
+
+fonction setup() - exécutée 1 fois
+| créer un réseau wifi avec comme nom "ZONE_MAGIQUE_1"
+
+fonction loop() - répétée ad vitam æternam
+| rien à faire
+
+
+
+betaLarp_recepteur_1.ino
+
+fonction setup() - exécutée 1 fois
+| initialiser la LED RGB avec la couleur VIOLETTE
+| paramétrer la carte wifi
+
+fonction loop() - répétée ad vitam æternam
+| scanner les reseaux wifi à portée
+	| si un reseau wifi "ZONE_MAGIQUE_1" est trouvé
+		| mesurer la force du signal de l'emetteur
+		| 
+		| si la force du signal est supérieure à -55 décibels (emetteur proche)
+			| on affiche la couleur ROUGE sur la LED
+		| 
+		| si la force du signal est supérieure à -65 décibels (emetteur un peu plus loin)
+			| on affiche la couleur ORANGE sur la LED
+		| 
+		| si la force du signal est inférieure -65 décibels (emetteur détecté mais éloigné)
+			| on affiche la couleur JAUNE sur la LED
+			
+			
+
+
+betaLarp_recepteur_2.ino
+
+fonction setup() - exécutée 1 fois
+| initialiser la LED RGB avec la couleur VIOLETTE
+| paramétrer la carte wifi
+
+fonction loop() - répétée ad vitam æternam
+| scanner les reseaux wifi à portée
+	| si un reseau wifi "ZONE_MAGIQUE" est trouvé
+		| 
+		| si c'est un reseau wifi "ZONE_MAGIQUE_1"
+			| on affiche la couleur ROUGE sur la LED pendant 3s
+		| 
+		| si c'est un reseau wifi "ZONE_MAGIQUE_2"
+			| on affiche la couleur VERTE sur la LED pendant 3s
+		| 
+		| si c'est un reseau wifi "ZONE_MAGIQUE_3"
+			| on affiche la couleur BLEUE sur la LED pendant 3s
+| on affiche la couleur VIOLETTE
+
